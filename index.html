@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de tablas de verdad</title>
+    <link href="./css/mobile.css" rel="stylesheet">
+    <link href="./css/desktop.css" rel="stylesheet" media="(min-width: 900px)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&family=Nunito:ital,wght@0,300;0,400;0,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Calcula tu propia tabla de verdad</h1>
+        <ul>
+            <li><a>Instrucciones</a></li>
+            <li><a>Saber más</a></li>
+            <li><a>Tipo de operador</a></li>
+        </ul>
+    </header>
+    <main>
+        <section class="main__input-data">
+            <h2>Representemos a tu preposición</h2>
+            <form class="input-data__container">
+                <div>
+                    <div class="container__input">
+                        <label for="firstLetter">Escoge la primera letra</label>
+                        <input list="alphabet1" class="container__first-letter input" type="text" name="firstLetter" id="firstLetter" autocomplete="on" required placeholder="Letra 1">
+                            <datalist id="alphabet1">
+                                <option value="a"></option>
+                                <option value="b"><option>
+                                <option value="c"></option>
+                                <option value="d"></option>
+                                <option value="e"></option>
+                                <option value="f"></option>
+                                <option value="g"></option>
+                                <option value="h"><option>
+                                <option value="i"></option>
+                                <option value="j"></option>
+                                <option value="k"></option>
+                                <option value="l"><option>
+                                <option value="m"></option>
+                                <option value="n"></option>
+                                <option value="o"></option>
+                                <option value="p"><option>
+                                <option value="q"></option>
+                                <option value="r"></option>
+                                <option value="s"></option>
+                                <option value="t"><option>
+                                <option value="u"></option>
+                                <option value="v"></option>
+                                <option value="w"></option>
+                                <option value="x"><option>
+                                <option value="y"></option>
+                                <option value="z"></option>   
+                            </datalist>
+                    </div>
+                    <div class="container__input">
+                        <label for="logicalOperator">Escoge el operador lógico</label>
+                        <input list="operator" class="container__logical-operator input" type="text" name="logicalOperator" id="logicalOperator" autocomplete="on" required placeholder="Operador">
+                            <datalist id="operator">
+                                <option value="v"></option>
+                                <option value="^"></option>
+                                <option value="&#10140"></option>
+                                <option value="&#11020"></option>
+                            </datalist>   
+                    </div>
+                    <div class="container__input">
+                        <label for="secondLetter">Escoge la segunda letra</label>
+                        <input list="alphabet2" class="container__second-letter input" type="text" name="secondLetter" id="secondLetter" autocomplete="on" required placeholder="Letra 2">
+                            <datalist id="alphabet2">
+                                <option value="a"></option>
+                                <option value="b"><option>
+                                <option value="c"></option>
+                                <option value="d"></option>
+                                <option value="e"></option>
+                                <option value="f"></option>
+                                <option value="g"></option>
+                                <option value="h"><option>
+                                <option value="i"></option>
+                                <option value="j"></option>
+                                <option value="k"></option>
+                                <option value="l"><option>
+                                <option value="m"></option>
+                                <option value="n"></option>
+                                <option value="o"></option>
+                                <option value="p"><option>
+                                <option value="q"></option>
+                                <option value="r"></option>
+                                <option value="s"></option>
+                                <option value="t"><option>
+                                <option value="u"></option>
+                                <option value="v"></option>
+                                <option value="w"></option>
+                                <option value="x"><option>
+                                <option value="y"></option>
+                                <option value="z"></option>   
+                            </datalist>
+                    </div>
+                </div>
+                <button class="container__build-button" id="btnBuild" onclick="return getData()" >Construir tabla de verdad</button>
+            </form>  
+        </section>
+        <section class="main__table">
+            <h2 class="h2">Tabla de verdad</h2>
+            <div>
+                <div class="table__container">
+                    <p class="table__title" id="paragraph"></p>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>p</td>
+                                <td>q</td>
+                                <td>p v q</td>
+                            </tr>
+                            <tr>
+                                <td class="value1" id="value1">V</td>
+                                <td class="value2" id="value2">V</td>
+                                <td id="value1-2" class="values"></td>
+                            </tr>
+                            <tr>
+                                <td class="value3">V</td>
+                                <td class="value4">F</td>
+                                <td id="value3-4" class="values"></td>   
+                            </tr>
+                            <tr>
+                                <td class="value5">F</td>
+                                <td class="value6">V</td>
+                                <td id="value5-6"  class="values"></td>
+                            </tr>
+                            <tr>
+                                <td class="value7">F</td>
+                                <td class="value8">F</td>
+                                <td id="value7-8" class="values"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <article class="table__explanation">
+                    <h3>Explicación</h3>
+                    <div>
+                        <p class="explanation__info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, repellendus. Suscipit officiis quod rem eos pariatur dolore aperiam dicta eligendi iure temporibus ducimus, quia nesciunt, libero similique ex praesentium ratione.<a href="">Ver más</a></p>
+                    </div>
+                </article>
+        </section>
+        <section class="main__user-actions">
+            <h3 class="user-actions__title">¿Qué quieres hacer con el resultado?</h3>
+            <ul class="user-actions__list">
+                <li><button class="printButton action">Imprimir</button></li>
+                <li><button class="shareButton action">Compartir</button></li>
+                <li><button class="copyButton action">Copiar</button></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <script src="mate.js"></script>
+</body>
+</html>   

@@ -1,0 +1,40 @@
+html{
+    font-size: 70%;
+}
+.input-data__container > div{
+    flex-wrap: nowrap;
+}
+.main__input-data h2{
+    margin: var(--big-space);
+}
+.input-data__container .container__input{
+    display: flex;
+    flex-direction: column;
+    margin:var(--big-space);
+}
+.container__input label{
+    width: 100%;
+}
+.container__input input{
+    width: 90%;
+    margin:var(--normal-space) 0;
+}
+.main__table{
+    margin:40px 0;
+}
+.table__explanation{
+    margin: 40px;
+}
+.main__user-actions .user-actions__list{
+    flex-direction: row;
+    justify-content: center;
+}
+.main__user-actions .user-actions__title{
+    margin-bottom: 50px;
+}
+.main__user-actions .user-actions__list li{
+    width:100%;
+}
+.main__user-actions .user-actions__list li button{
+    width: 80%;
+}
