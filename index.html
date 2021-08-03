@@ -106,13 +106,13 @@
         </section>
         <section class="main__table">
             <h2 class="h2">Tabla de verdad</h2>
-            <div>
+            <div class="table__dad-container">
                 <div class="table__container">
                     <p class="table__title" id="paragraph"></p>
-                    <table class="table">
+                    <table class="table" id="table">
                         <tbody>
                             <tr>
-                                <td>p</td>
+                                <td id="ygy">p</td>
                                 <td>q</td>
                                 <td>p v q</td>
                             </tr>
@@ -122,36 +122,36 @@
                                 <td id="value1-2" class="values"></td>
                             </tr>
                             <tr>
-                                <td class="value3">V</td>
-                                <td class="value4">F</td>
+                                <td class="value3" id="value3">V</td>
+                                <td class="value4" id="value4">F</td>
                                 <td id="value3-4" class="values"></td>   
                             </tr>
                             <tr>
-                                <td class="value5">F</td>
-                                <td class="value6">V</td>
+                                <td class="value5" id="value5">F</td>
+                                <td class="value6" id="value6">V</td>
                                 <td id="value5-6"  class="values"></td>
                             </tr>
                             <tr>
-                                <td class="value7">F</td>
-                                <td class="value8">F</td>
+                                <td class="value7" id="value7">F</td>
+                                <td class="value8" id="value8">F</td>
                                 <td id="value7-8" class="values"></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <article class="table__explanation">
-                    <h3>Explicación</h3>
+                    <h3>¿Cómo se obtuvo el valor de verdad?</h3>
                     <div>
-                        <p class="explanation__info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, repellendus. Suscipit officiis quod rem eos pariatur dolore aperiam dicta eligendi iure temporibus ducimus, quia nesciunt, libero similique ex praesentium ratione.<a href="">Ver más</a></p>
+                        <p class="explanation__info" id="explanation"></p>
                     </div>
                 </article>
         </section>
         <section class="main__user-actions">
             <h3 class="user-actions__title">¿Qué quieres hacer con el resultado?</h3>
             <ul class="user-actions__list">
-                <li><button class="printButton action">Imprimir</button></li>
-                <li><button class="shareButton action">Compartir</button></li>
-                <li><button class="copyButton action">Copiar</button></li>
+                <li><button class="printButton action" id="print" onclick="imprimirElemento()">Imprimir</button></li>
+                <li><button class="shareButton action" id="share" onclick="share()">Compartir</button></li>
+                <li><button class="copyButton action" id="copy" onclick="copy()">Copiar</button></li>
             </ul>
         </section>
     </main>

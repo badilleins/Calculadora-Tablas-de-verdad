@@ -19,6 +19,9 @@ html{
     width: 90%;
     margin:var(--normal-space) 0;
 }
+.table__dad-container{
+    max-width: 1000px;
+}
 .main__table{
     margin:40px 0;
 }

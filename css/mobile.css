@@ -135,6 +135,9 @@ input::placeholder{
     margin:var(--normal-space) auto var(--big-space);
     outline:none;
 }
+.table__dad-container{
+    width: 80%;
+}
 .main__table{
     display:flex;
     flex-direction: column;

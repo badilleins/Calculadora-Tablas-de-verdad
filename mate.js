@@ -1,31 +1,22 @@
-//Obtener el input del operador lógico y las variables 
 function getData(){
-//Ver como le hago que se muestre el valor
 	let firstLetter = document.getElementById('firstLetter').value
 	let secondLetter = document.getElementById('secondLetter').value
-    let val1 = document.getElementsByClassName('value1').innerText
-	let val2 = document.getElementsByClassName('value2').innerText
-	let val3 = document.getElementsByClassName('value3').innerText
-	let val4 = document.getElementsByClassName('value4').innerText
-	let val5 = document.getElementsByClassName('value5').innerText
-	let val6 = document.getElementsByClassName('value6').innerText
-	let val7 = document.getElementsByClassName('value7').innerText
-	let val8 = document.getElementsByClassName('value8').innerText
-
-	let firstValues = [val1,val3,val5,val7]
-	let secondValues=[val2,val4,val6,val8]
-	
-
+    let val1 = document.getElementById('value1').innerText
+	let val2 = document.getElementById('value2').innerText
+	let val3 = document.getElementById('value3').innerText
+	let val4 = document.getElementById('value4').innerText
+	let val5 = document.getElementById('value5').innerText
+	let val6 = document.getElementById('value6').innerText
+	let val7 = document.getElementById('value7').innerText
+	let val8 = document.getElementById('value8').innerText
     let operator = document.getElementById('logicalOperator').value
-	//titulo de la tabla
-
-	
 
 	document.getElementById('paragraph').innerHTML=`${firstLetter} ${operator} ${secondLetter}`
+	//Recibir el operador y mandar a llamar la operación lógica
 	function receiveOperator(){
 	switch(operator){
 	case "^":
-        conjuction();
+		conjunction();
 	break
 	case "v":
 		disjunction();
@@ -37,61 +28,144 @@ function getData(){
         biconditional();
     break
 	default:
-	    console.log("error");
+		document.getElementById("value1-2").innerText= "error";
+		document.getElementById("value3-4").innerText= "error";
+		document.getElementById("value5-6").innerText= "error";
+		document.getElementById("value7-8").innerText= "error";
     }
 }
-	//funciones 
-    function conjuction(){
-		for (let i= 0; i< 4; i++){
-		let a = firstValues[i]
-		let b = secondValues[i]
-	    if(a === "V" && b=== "V"){
-		console.log("V");
+	//Operaciones lógicas
+	function conjunction(){
+	    if(val1 === "V" && val2=== "V"){
+			document.getElementById('value1-2').innerText ="V";
 	    }else{
-        console.log("F");
-	    }
-    }
-}
-//Disyunción 
+			document.getElementById('value1-2').innerText ="F";
+		}
+		if(val3 === "V" && val4=== "V"){
+			document.getElementById('value3-4').innerText ="V";
+	    }else{
+			document.getElementById('value3-4').innerText ="F";
+		}if(val5 === "V" && val6=== "V"){
+			document.getElementById('value5-6').innerText ="V";
+	    }else{
+			document.getElementById('value5-6').innerText ="F";
+		}
+		if(val7 === "V" && val8=== "V"){
+			document.getElementById('value7-8').innerText ="V";
+	    }else{
+			document.getElementById('value7-8').innerText ="F";
+			}
+	}
+		
+	//Disyunción 
     function disjunction(){
 	    if(val1 === "V" || val2 === "V"){
-		    console.log( "V");
+		    document.getElementById('value1-2').innerText ="V";
 	    }else {
-		    console.log( "F");
+		    document.getElementById('value1-2').innerText ="F";
+	    }if(val3 === "V" || val4 === "V"){
+			document.getElementById('value3-4').innerText ="V";
+	    }else {
+			document.getElementById('value3-4').innerText ="F";
+	    }if(val5 === "V" || val6 === "V"){
+			document.getElementById('value5-6').innerText ="V";
+	    }else {
+			document.getElementById('value5-6').innerText ="F";
+	    }if(val7 === "V" || val8 === "V"){
+			document.getElementById('value7-8').innerText ="V";
+	    }else {
+			document.getElementById('value7-8').innerText ="F";
 	    }
     }
+
 //Condicional
     function conditional(){
 	    if( val1 === "V" && val2 === "F"){
-            console.log( "F");
-	    }
-	    else{
-		    console.log( "V");
+			document.getElementById('value1-2').innerText ="F";
+	    }else{
+			document.getElementById('value1-2').innerText ="V";
+	    }if( val3 === "V" && val4 === "F"){
+			document.getElementById('value3-4').innerText ="F";
+	    }else{
+			document.getElementById('value3-4').innerText ="V";
+	    }if( val5 === "V" && val6 === "F"){
+			document.getElementById('value5-6').innerText ="F";
+	    }else{
+			document.getElementById('value5-6').innerText ="V";
+	    }if( val7 === "V" && val8 === "F"){
+			document.getElementById('value7-8').innerText ="F";
+	    }else{
+			document.getElementById('value7-8').innerText ="V";
 	    }
     }
-//Bicondicional
+	//Bicondicional
     function biconditional(){
-	    if(val1 === "V" && val2 === "V"){
-		    console.log( "V");
-	    }else if (val1 === "F" && val2 === "F"){
-            console.log( "V");
-	    } else{
-            console.log( "F");	
+	    if((val1 === "V" && val2 === "V") || (val1 === "F" && val2 === "F")  ){
+		    document.getElementById('value1-2').innerText ="V";
+		}else{
+            document.getElementById('value1-2').innerText ="F";
+	    }if((val3 === "V" && val4 === "V") || (val3 === "F" && val4 === "F")  ){
+		    document.getElementById('value3-4').innerText ="V";
+		}else{
+            document.getElementById('value3-4').innerText ="F";
+	    }if((val5 === "V" && val6 === "V") || (val5 === "F" && val6 === "F")  ){
+		    document.getElementById('value5-6').innerText ="V";
+		}else{
+            document.getElementById('value5-6').innerText ="F";
+	    }if((val7 === "V" && val8 === "V") || (val7 === "F" && val8 === "F")  ){
+		    document.getElementById('value7-8').innerText ="V";
+		}else{
+            document.getElementById('value7-8').innerText ="F";
 	    }
-    }
-	//funcion para llamar a las funciones
+	}
+	//mandar a llamar la función de recibir el operador
+	receiveOperator();
 
-//OPERACIONES LÓGICAS
-//Conjunción
-
-    document.getElementById('value1-2').innerText= receiveOperator();
-    // document.getElementById('value3-4').innerText= receiveOperator();
-    // document.getElementById('value5-6').innerText= receiveOperator();
-    // document.getElementById('value7-8').innerText= receiveOperator();
-	
+	//Dar la explicación correspondiente a cada operación lógica
+	function explanation(){
+		switch(operator){
+			case "^":
+        document.getElementById('explanation').innerText =`Usted ha elegido el conector perteneciente a la operación de la conjunción. 
+		Los resultados se obtienen de la siguiente manera:   
+		- Cuando la proposición 1 y la proposición 2 son ambas verdaderas el resultado es verdadero, en todos los demas casos el resultado es falso.`;
+	break
+			case "v":
+		document.getElementById('explanation').innerText =`Usted ha elegido el conector perteneciente a la operación de la disyunción. 
+		Los resultados se obtienen haciendo el siguiente análisis:
+		- Cuando la proposición 1 y la proposición 2 son ambas falsas el resultado es falso, en todos los demas casos el resultado es verdadero.`;
+	break
+			case "➜":
+		document.getElementById('explanation').innerText =`Usted ha elegido el conector perteneciente a la operación del condicional o implicacion.
+		Para obtener los resutlados debemos entender lo siguiente: 
+		- El resultado es falso únicamente en el caso de que la proposición 1 sea verdadera y la proposición 2 sea falsa, regresando un resultado verdadero en todos los demás casos.`;
+	break
+			case "⬌":
+        document.getElementById('explanation').innerText =`Usted ha elegido el conector perteneciente a la operación del bicondicional.
+		El resultado es obtenido haciendo el análisis siguiente:
+		- Si las dos proposiciones son verdaderas o ambas son falsas el resultado será verdadero, caso contrario el resultado será falso.`;
+    break
+			default:
+			document.getElementById('explanation').innerText =`Debe elegir un operador para obtener su explicación.`
+    	}
+	} 
+	explanation();
 	return false;
+	
 }
-//guardar el resultado de receive operator en 4 variables para poner eso en los 4 td
-
+//IMPRIMIR RESULTADOS DE LA TABLA
+function imprimirElemento() {
+	let ventana = window.open('', 'PRINT', 'height=400,width=600');
+	ventana.document.write('<html><head><title>' + 'imprimir' + '</title>');
+	ventana.document.write('</head><body >');
+	ventana.document.write(document.getElementById('table').innerHTML);
+	ventana.document.write('</body></html>');ventana.document.write('<link rel="stylesheet" href="mobile.css">')
+	ventana.document.close();
+	ventana.focus();
+	ventana.onload = function() {
+		ventana.print();
+		ventana.close();
+	};
+	return true;
+}
 
 
