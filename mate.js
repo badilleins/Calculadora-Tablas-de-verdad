@@ -10,7 +10,10 @@ function getData(){
 	let val7 = document.getElementById('value7').innerText
 	let val8 = document.getElementById('value8').innerText
     let operator = document.getElementById('logicalOperator').value
-
+	
+	document.getElementById('a^b').innerText= firstLetter
+	document.getElementById('logical-operation').innerText = (`${firstLetter} ${operator} ${secondLetter}`)
+    document.getElementById('avb').innerText= secondLetter 
 	document.getElementById('paragraph').innerHTML=`${firstLetter} ${operator} ${secondLetter}`
 	//Recibir el operador y mandar a llamar la operación lógica
 	function receiveOperator(){
@@ -153,19 +156,44 @@ function getData(){
 	
 }
 //IMPRIMIR RESULTADOS DE LA TABLA
-function imprimirElemento() {
-	let ventana = window.open('', 'PRINT', 'height=400,width=600');
-	ventana.document.write('<html><head><title>' + 'imprimir' + '</title>');
-	ventana.document.write('</head><body >');
-	ventana.document.write(document.getElementById('table').innerHTML);
-	ventana.document.write('</body></html>');ventana.document.write('<link rel="stylesheet" href="mobile.css">')
-	ventana.document.close();
-	ventana.focus();
-	ventana.onload = function() {
-		ventana.print();
-		ventana.close();
-	};
-	return true;
+
+
+function PrintTable(){
+	let operator = document.getElementById('logicalOperator').value
+	switch(operator){
+	case "^":
+		PrintImage('https://i.ibb.co/B3F6nVq/conjuncion.png');
+	break
+	case "v":
+		PrintImage('https://i.ibb.co/p1qkCpL/disyuncion.png');
+	break
+	case "➜":
+		PrintImage('https://i.ibb.co/hMcjfM9/implicaci-n.png');
+	break
+	case "⬌":
+		PrintImage('https://i.ibb.co/bLwFfkT/bicondicional.png');
+    break
+	default:
+		return 'error';
+    }
+	function PrintImage(source)
+    {
+        var Pagelink = "Imprime tu tabla de verdad";
+        var pwa = window.open(Pagelink, "_new");
+        pwa.document.open();
+        pwa.document.write(ImagetoPrint(source));
+        pwa.document.close();
+    }
+	function ImagetoPrint(source)
+    {
+        return "<html><head><scri"+"pt>function step1(){\n" +
+                "setTimeout('step2()', 10);}\n" +
+                "function step2(){window.print();window.close()}\n" +
+                "</scri" + "pt></head><body onload='step1()'>\n" +
+                "<img src='" + source + "' /></body></html>";
+    }
 }
+
+
 
 

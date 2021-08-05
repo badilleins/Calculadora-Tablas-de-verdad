@@ -16,9 +16,8 @@
     <header>
         <h1>Calcula tu propia tabla de verdad</h1>
         <ul>
-            <li><a>Instrucciones</a></li>
-            <li><a>Saber más</a></li>
-            <li><a>Tipo de operador</a></li>
+            <li><a href="instructions.html">Instrucciones</a></li>
+            <li><a href="more_info.html">Saber más</a></li>
         </ul>
     </header>
     <main>
@@ -112,9 +111,9 @@
                     <table class="table" id="table">
                         <tbody>
                             <tr>
-                                <td id="ygy">p</td>
-                                <td>q</td>
-                                <td>p v q</td>
+                                <td id="a^b"></td>
+                                <td id="avb"></td>
+                                <td id="logical-operation"></td>
                             </tr>
                             <tr>
                                 <td class="value1" id="value1">V</td>
@@ -149,7 +148,7 @@
         <section class="main__user-actions">
             <h3 class="user-actions__title">¿Qué quieres hacer con el resultado?</h3>
             <ul class="user-actions__list">
-                <li><button class="printButton action" id="print" onclick="imprimirElemento()">Imprimir</button></li>
+                <li><button class="printButton action" id="print" onclick="PrintTable()" return="false">Imprimir</button></li>
                 <li><button class="shareButton action" id="share" onclick="share()">Compartir</button></li>
                 <li><button class="copyButton action" id="copy" onclick="copy()">Copiar</button></li>
             </ul>

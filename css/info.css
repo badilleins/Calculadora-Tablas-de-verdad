@@ -1,0 +1,196 @@
+:root{
+    --primary-font:'Nunito Sans', sans-serif;
+    --secondary-font:'Nunito', sans-serif;
+    --primary-color-green:#055052;
+    --primary-color-dark-green:#003638;
+    --secondary-color-light-cyan: #53B8BB;
+    --secondary-color-light-yellow:#F3F2C9;
+    --normal-space:10px;
+    --small-space:5px;
+    --big-space:20px;
+    --small-font:1.6rem;
+    --normal-font:1.8rem;
+    --big-font:2rem;
+    --almost-huge-font:2.5rem;
+    --huge-font:3rem;
+    --thin-font:300;
+    --standard-font:400;
+    --fat-font:500;
+    --chubby-font:700;
+    --gross-font:900;
+}
+/*Base*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size:62.5%;
+}
+
+/*layout and labels*/
+body{
+    min-width: 320px;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 200px auto 200px;
+    font-family: var(--primary-font);
+    background: linear-gradient(var(--primary-color-green),var(--primary-color-dark-green));
+}
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    width: 100%;
+    padding:var(--normal-space);
+    color:#fff;
+}
+h1{
+    text-align: center;
+    margin-bottom: var(--big-space);
+    font-family: var(--secondary-font);
+    font-size:var(--huge-font);
+    font-weight: var(--gross-font);
+}
+a{
+    font-size: var(--normal-font);
+    text-decoration: none;
+    color: #ddd;
+}
+ul{
+    list-style:none;
+    display: flex;
+    justify-content: space-evenly;
+}
+ul li{
+    margin:0 var(--normal-space);
+}
+main{
+    display: flex;
+    flex-direction: column;
+    padding: var(--normal-space);
+    min-width: 320px;
+    width: 100%;
+    font-size: var(--normal-font);
+    font-family: var(--secondary-font);
+    color:#ddd;
+}
+
+
+/*Components*/
+.logical-operations{
+    font-family: var(--primary-font);
+    padding: var(--normal-space);
+}
+h2{
+    font-size: var(--almost-huge-font);
+    font-family: var(--secondary-font);
+    font-weight: var(--gross-font);
+    margin: 50px var(--big-space);
+    text-align: start;
+}
+.logical-operations h3{
+    font-size: var(--huge-font);
+    font-family: var(--secondary-font);
+    font-weight: var(--gross-font);
+    margin: 50px var(--big-space);
+    text-align: center;
+}
+.operations__containers{
+    margin: 50px var(--big-space);
+    height: max-content;
+}
+.operation__dad-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin:50px 0 80%;
+}
+.info__container{
+    flex-grow: 1;
+}
+.operation__subtitle{
+    font-family: var(--secondary-font);
+    font-size: var(--big-font);
+    border-radius: 5%; 
+    min-width: 100px;
+    max-width: max-content;
+    height:50px;
+    padding: var(--normal-space);
+    margin: var(--normal-space) 0;
+}
+.definition{
+    border: 2px solid var(--secondary-color-light-cyan) ;
+} 
+.example{
+    border: 2px solid var(--secondary-color-light-yellow) ;
+}
+.table{
+    border: 2px solid lightpink;
+}
+p{
+    font-family: var(--primary-font);
+    font-size: var(--normal-font);
+    margin: 35px auto;
+    min-width: 100px;
+    max-width: 400px;
+    height: auto;
+}
+.dad-container__graphic{
+    flex-grow: 1;
+    margin-bottom: 50px;
+}
+.image__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 260px;
+    height: 260px;
+    min-height: 200px;
+    border-radius: 3px solid var(--secondary-color-light-yellow);
+    margin:50px auto;
+}
+.image{
+    display:inline-block;
+    height:100%;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.prepositions{
+    background-size:cover;
+    min-width: 300px;
+}
+.result{
+    background-size: contain;
+    min-width: 180px;
+}
+img{
+    height:100%;
+    width:100%;
+}
+
+.conjunction__image1,.disyunction__image1,.biconditional__image1,.conditional__image1{
+    background-image:url('https://i.ibb.co/TPw67JJ/conjuncionfirst.png');
+}
+.conjunction__image2{
+    background-image: url('https://i.ibb.co/ysDjG7y/conjuncionsecondpart.png');
+}
+.disyunction__image2{
+    background-image:url('https://i.ibb.co/b6NBGdP/diyuncionsecond.png');
+}
+.biconditional__image2{
+    background-image:url('https://i.ibb.co/WpYzv2y/bicondicionalsecond.png');
+}
+.conditional__image2{
+    background-image:url('https://i.ibb.co/BC1Wgs5/implicaci-nsecond.png');
+}
+.dad-container__graphic, .info__container{
+    text-align: center;
+}
+/*Status*/
+a:hover{
+    text-decoration:underline;
+    cursor:pointer;
+    color: var(--secondary-color-light-yellow);
+}
