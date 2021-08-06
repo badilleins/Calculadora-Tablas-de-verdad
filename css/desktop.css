@@ -38,6 +38,3 @@ html{
 .main__user-actions .user-actions__list li{
     width:100%;
 }
-.main__user-actions .user-actions__list li button{
-    width: 80%;
-}
