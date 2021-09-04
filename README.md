@@ -31,3 +31,5 @@ I used the next tools, to develop the page:
 - HTML
 - CSS
 - JAVASCRIPT
+
+> You can visit my web app clicking [here](https://badilleins.github.io/Calculadora-Tablas-de-verdad/)
